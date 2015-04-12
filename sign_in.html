@@ -47,6 +47,21 @@
 		</nav>
 	</head>
 	<body>
+		<form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+		<fieldset >
+		<legend>Login</legend>
+		<input type='hidden' name='submitted' id='submitted' value='1'/>
+		 
+		<label for='username' >UserName:</label>
+		<input type='text' name='username' id='username'  maxlength="50" />
+		 
+		<label for='password' >Password:</label>
+		<input type='password' name='password' id='password' maxlength="50" />
+		 
+		<input type='submit' name='Submit' value='Submit' />
+		 
+		</fieldset>
+		</form>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
