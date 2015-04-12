@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
 	<head>
-		<title>HOME | NYU SOS</title>
+		<!doctype html>
+	<html>
+		<title>MATH | NYU SOS</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
@@ -28,13 +30,13 @@
 			          <ul class="dropdown-menu" role="menu" style ="text-align:center">
 			          	<li><a href="general.html">TECHNOLOGY</a></li>
 			          	<li class="divider"></li>
-			            <li><a href="math.html">MATH</a></li>
+			            <li><a href="math.html"><strong>MATH</a></strong></li>
 			            <li class="divider"></li>
 			            <li><a href="science.html">SCIENCE</a></li>
 			          </ul>
 			        </li>
 
-			       <li><a href="about.html">ABOUT</a></li>
+			        <li><a href="about.html">ABOUT</a></li>
 			        <li><a href="faqs.html">FAQs</a></li>
 			      </ul>
 			       <ul class="nav navbar-nav navbar-right">
@@ -48,52 +50,66 @@
 	</head>
 	<body>
 		<br><br><br>
-		<div class="jumbotron">
-			<div class ="container">
-			  <h1  style="text-align:center">Welcome to N.Y.U. S.O.S!</h1>
-			  <p style="text-align:center"> Post a picture of a homework question you're stumped on, and get a video response explaining exactly how to solve it!</p>
-			  <p style="text-align:center"><a class="btn btn-primary btn-lg" href="register.html" role="button">POST NOW!</a></p>
+		<center>
+		<div class="container">
+			<div class="row" style="text-align:center;">
+			  <div class="col-sm-3 col-md-3">
+			    <div class="thumbnail">
+			      <img src="http://redarchive.nmc.org/system/files/question%201.png" alt="...">
+			      <div class="caption">
+			        <h3>Example question</h3>
+			        <p></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<br><br><br>
+		 <!-- 1. The 'widget' div element contains the upload widget.
+		         The 'player' div element contains the player IFrame.-->
+		 <div id="widget"></div>
+	     <div id="player"></div>
+		 <script>
+	      // 2. Asynchronously load the Upload Widget and Player API code.
+	      var tag = document.createElement('script');
+	      tag.src = "https://www.youtube.com/iframe_api";
+	      var firstScriptTag = document.getElementsByTagName('script')[0];
+	      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-			</div>
-		</div>
-		<div class ="container">
-			<div class="row">
-			  <div class="col-sm-6 col-md-4">
-			    <div class="thumbnail">
-			      <img src="http://www.iquestaustin.com/uploads/1/7/6/1/17614643/3069044_orig.png?100" alt="...">
-			      <div class="caption" style = "text-align: center">
-			        <h3>MATH HELP</h3>
-			        <p>Stumped on a certain math question?<br>Not sure what to do after a certain step?</p>
-			        <p><a href="math.html" class="btn btn-primary" role="button">ASK A MATH QUESTION</a>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="col-sm-6 col-md-4">
-			    <div class="thumbnail">
-			      <img src="http://www.aftermarket.science/img/001.science.png" alt="...">
-			      <div class="caption" style = "text-align: center">
-			        <h3>SCIENCE HELP</h3>
-			        <p>Stumped on a certain science question?<br>Can't figure out which equation to use?</p>
-			        <p><a href="science.html" class="btn btn-primary" role="button">ASK A SCIENCE QUESTION</a>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="col-sm-6 col-md-4">
-			    <div class="thumbnail">
-			      <img src="http://www.iconshock.com/img_jpg/SUPERVISTA/education_icons/jpg/256/homework_icon.jpg" alt="...">
-			      <div class="caption" style = "text-align: center">
-			        <h3>TECHNOLOGY HELP</h3>
-			        <p>Stumped on a technical homework question?<br>Don't know what to initialize?</p>
-			        <p><a href="general.html" class="btn btn-primary" role="button">ASK A TECHNICAL QUESTION</a>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-		</div>
+	      // 3. Define global variables for the widget and the player.
+	      // The function loads the widget after the JavaScript code has
+	      // downloaded and defines event handlers for callback notifications
+	      // related to the widget.
+	      var widget;
+	      var player;
+	      function onYouTubeIframeAPIReady() {
+	        widget = new YT.UploadWidget('widget', {
+	          width: 500,
+	          events: {
+	            'onUploadSuccess': onUploadSuccess,
+	            'onProcessingComplete': onProcessingComplete
+	          }
+	        });
+	      }
+
+	      // 4. This function is called when a video has been successfully uploaded.
+	      function onUploadSuccess(event) {
+	        alert('Video ID ' + event.data.videoId + ' was uploaded and is currently being processed.');
+	      }
+
+	      // 5. This function is called when a video has been successfully processed.
+	      function onProcessingComplete(event) {
+	        player = new YT.Player('player', {
+	          height: 250,
+	          width: 500,
+	          videoId: event.data.videoId,
+	          events: {}
+	        });
+	      }
+	    </script>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	</body>
-
 </html>
