@@ -37,50 +37,31 @@
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="faqs.html">FAQs</a></li>
                   </ul>
-                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="registrationForm.html">REGISTER</a></li>
-                    <li><a href="login1.html">SIGN IN</a></li>
-                  </ul>
+			       <ul class="nav navbar-nav navbar-right">
+			        <li><a href="registrationForm.html">REGISTER</a></li>
+			        <li><a href="login1.html"><strong>SIGN IN</strong></a></li>
+			      </ul>
                 </div><!--/.nav-collapse -->
               </div>
             <!-- Navigation Bar End -->
         </nav>
     </head>
-
     <body>
-        <br><br><br>
-        <form action="registrationPush.php" method="post" />
-
-
-        <p> 
-            <label>First Name:</label>
-            <input name="first_name" required="required" placeholder="John" type="text">
-        </p>
-
-        <p> 
-            <label>Last Name:</label>
-            <input name="last_name" required="required" placeholder="Doe" type="text">
-        </p>
-
-        <p> 
-            <label> Your email:</label>
-            <input name="email" required="required" placeholder="random@mail.com" type="email"> 
-        </p>
-
-        <p> 
-            <label> Your username:</label>
-            <input name="username" required="required" placeholder="John1923" type="username"> 
-        </p>
-
-        <p> 
-            <label>password:</label>
-            <input name="password" required="required" placeholder="eg. X8df!90EO" type="password">
-        </p>
-
-        <p> 
-            <input value="Submit" type="submit"> 
-        </p>      
-
-        </form>
-    </body>
+    	<br><br><br>
+		<form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+		<fieldset >
+		<legend>Login</legend>
+		<input type='hidden' name='submitted' id='submitted' value='1'/>
+		 
+		<label for='username' >UserName:</label>
+		<input type='text' name='username' id='username'  maxlength="50" />
+		 
+		<label for='password' >Password:</label>
+		<input type='password' name='password' id='password' maxlength="50" />
+		 
+		<input type='submit' name='Submit' value='Submit' />
+		 
+		</fieldset>
+		</form>
+	</body>
 </html>
