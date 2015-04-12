@@ -1,0 +1,16 @@
+body:{
+	margin: 0;
+	background-color: #666;
+}
+
+.logo {
+	padding : 50px 50px;
+	margin: 10px 10px;
+
+}
+
+.jumbotron{
+	margin :0px;
+	padding:0px;
+}
+
